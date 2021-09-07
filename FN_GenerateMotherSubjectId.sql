@@ -47,7 +47,7 @@ BEGIN
 			CAST(STUFF('000000',7-LEN(ISNULL(MAX(RIGHT(@LastUniqueId,6)),0)+1),        
 			LEN(ISNULL(MAX(RIGHT(@LastUniqueId,6)),0)+1),        
 			CONVERT(VARCHAR,ISNULL(MAX(RIGHT(@LastUniqueId,6)),0)+1)) AS NVARCHAR(250))
-			FROM Tbl_MothersDetail WHERE --HospitalId = @HospitalId AND  
+			FROM Tbl_MothersDetail 
 			MotherSubjectId LIKE  'SSOD/'+ @MonthYear +'/%' 
 			
 	RETURN @UniqueSubjectId
