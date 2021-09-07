@@ -60,7 +60,7 @@ BEGIN
 		LEN(ISNULL(MAX(RIGHT(@LastShipmentId1,4)),0)+1),        
 		CONVERT(VARCHAR,ISNULL(MAX(RIGHT(@LastShipmentId1,4)),0)+1)) AS NVARCHAR(15))
 	FROM Tbl_Shipment 
-	WHERE HospitalId = @HospitalId  AND GeneratedShipmentId LIKE @SenderCode +'/'+@MonthYear+'/%'  
+	WHERE  GeneratedShipmentId LIKE @SenderCode +'/'+@MonthYear+'/%'  
 	
 	SET  @ReturnValue = @ShipmentId
 
